@@ -12,6 +12,8 @@ import interfaces.models.IQuestion;
  * @author Cris
  */
 public class IScoreStrategy implements IScoreStrategy  {
+    private String CalculateScore;
+    
      public String CalculateScore(IQuestion[] iqs) {
          
      }

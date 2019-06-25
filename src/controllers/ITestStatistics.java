@@ -12,12 +12,22 @@ import interfaces.models.IQuestion;
  * @author Cris
  */
 public class ITestStatistics implements ITestStatistics {
+    private double meanTimePerAnswer;
+    private double standardDeviationTimePerAnsewer;
+    private double correctAnswerPecentage;
+    private double incorrectAnswerPecentage;
+    private int correctAnswer;
+    private int incorrectAnswer;
+    private IQuestion[] incorrectAnswers;
+    private IQuestion[] correctAnswers;
+    
     
     public double meanTimePerAnswer() {
         
     }
 
     public double standardDeviationTimePerAnsewer(){
+        return;
         
     }
 

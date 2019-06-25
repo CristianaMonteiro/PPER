@@ -16,16 +16,32 @@ import interfaces.models.IQuestion;
  * @author Cris
  */
 public class ITest implements ITest {
+    private static int count = 0;
+    private boolean Question;
+    private IQuestion IQuestion; 
+    
+    private boolean removeQuestion;
+    private int numberQuestions;
+    private boolean Complete;
+    private ITestStatistics TestStatistics;
+    private boolean loadFromJSONFile;
+    private IScoreStrategy ScoreStrategy;
+    private String Score;
+    private boolean saveTestResults;
 
     public boolean addQuestion(IQuestion iq) throws TestException {
         // aQUI VAI O CODIGO
     }
 
     public IQuestion getQuestion(int i) throws TestException {
-        
+        return this.IQuestion;
     }
 
     public boolean removeQuestion(int i) {
+        for (int k = i ; k < ITest.count - 1; k++) {
+            this.Question[k] = this.Question[k+1];
+        }
+    }
         
     }
 
@@ -41,7 +57,8 @@ public class ITest implements ITest {
         
     }
 
-    public ITestStatistics getTestStatistics() {
+    public ITestStatistics getTestStatistics() { 
+        return this.TestStatistics;
         
     }
 
@@ -50,12 +67,12 @@ public class ITest implements ITest {
     }
 
     public void setScoreStrategy(IScoreStrategy iss) {
-        
-    }
+        this.ScoreStrategy = iss;
 
     public IScoreStrategy getScoreStrategy() {
-        
+        return this.ScoreStrategy;
     }
+        
 
     public String calculateScore() {
         
