@@ -3,9 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Cris/Desktop/TrabalhoPP/PP_ER/src/controllers/ITest.java</file>
-            <file>file:/C:/Users/Cris/Desktop/TrabalhoPP/PP_ER/src/controllers/IScoreStrategy.java</file>
-            <file>file:/C:/Users/Cris/Desktop/TrabalhoPP/PP_ER/src/controllers/ITestStatistics.java</file>
+            <file>file:/C:/Users/Cris/Desktop/TrabalhoPP/PP_ER/src/models/IQuestionMetadata.java</file>
+            <file>file:/C:/Users/Cris/Desktop/TrabalhoPP/PP_ER/src/models/IQuestion.java</file>
         </group>
     </open-files>
 </project-private>

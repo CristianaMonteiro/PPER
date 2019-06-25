@@ -22,8 +22,7 @@ public class ITest implements interfaces.controller.ITest {
 
     private static int count = 0;
     private boolean Complete;
-    private IQuestion IQuestion;
-
+    private IQuestion[] IQuestion;
     private boolean loadFromJSONFile;
     private int numberQuestions;
     private boolean Question;
@@ -33,15 +32,25 @@ public class ITest implements interfaces.controller.ITest {
     private IScoreStrategy ScoreStrategy;
     private ITestStatistics TestStatistics;
 
+
+    public ITest(int size) {
+        this.IQuestion[size];
+    }
+
     /**
+     * Método que adiciona uma pergunta ao array de perguntas
      *
-     * @param iq
-     * @return
+     * @param iq pergunta
+     * @return verdadeiro ou falso
      * @throws TestException
      */
     @Override
     public boolean addQuestion(IQuestion iq) throws TestException {
-        // aQUI VAI O CODIGO
+        this.IQuestion[count] = iq;
+        count++;
+
+        //Verifica se as perguntas são iguais
+        return this.IQuestion[count - 1].equals(iq);
     }
 
     /**
@@ -54,19 +63,20 @@ public class ITest implements interfaces.controller.ITest {
     }
 
     /**
+     * Método que retorna a pergunta na posição i passada po parametro
      *
-     * @param i
-     * @return
+     * @param i posição da pergunta no array
+     * @return pergunta
      * @throws TestException
      */
     @Override
     public IQuestion getQuestion(int i) throws TestException {
-        return this.IQuestion;
+        return this.IQuestion[i];
     }
 
     /**
-     *
-     * @return
+     * Método que retorna a estratégia da pontuação
+     * @return estratégia da pontuação
      */
     @Override
     public IScoreStrategy getScoreStrategy() {
@@ -74,13 +84,14 @@ public class ITest implements interfaces.controller.ITest {
     }
 
     /**
+     * Método para definir a estratégia de pontuação
      *
-     * @return
+     * @param iss estratégia de pontuação
      */
     @Override
-    public ITestStatistics getTestStatistics() {
-        return this.TestStatistics;
+    public void setScoreStrategy(IScoreStrategy iss) {
 
+        this.ScoreStrategy = iss;
     }
 
     /**
@@ -93,6 +104,17 @@ public class ITest implements interfaces.controller.ITest {
     }
 
     /**
+     * Método que retorna a estatistica do teste
+     *
+     * @return estatistica do teste
+     */
+    @Override
+    public ITestStatistics getTestStatistics() {
+        return this.TestStatistics;
+
+    }
+
+    /**
      *
      * @param string
      * @return
@@ -101,21 +123,24 @@ public class ITest implements interfaces.controller.ITest {
     @Override
     public boolean loadFromJSONFile(String string) throws TestException {
 
+
     }
 
     /**
+     * Método que retorna o numero de perguntas
      *
-     * @return
+     * @return numero da perguntas existente no teste
      */
     @Override
     public int numberQuestions() {
-
+        return count;
     }
 
     /**
+     * Método que remove a pergunta
      *
      * @param i
-     * @return
+     * @return remoção
      */
     @Override
     public boolean removeQuestion(int i) {
@@ -127,9 +152,10 @@ public class ITest implements interfaces.controller.ITest {
     }
 
     /**
+     * Método que remove a pergunta
      *
      * @param iq
-     * @return
+     * @return pergunta
      */
     @Override
     public boolean removeQuestion(IQuestion iq) {
@@ -137,23 +163,15 @@ public class ITest implements interfaces.controller.ITest {
     }
 
     /**
+     * Método que guarda os resultados do teste
      *
      * @param string
-     * @return
+     * @return resultados do teste
      * @throws TestException
      */
     @Override
     public boolean saveTestResults(String string) throws TestException {
 
-    }
-
-    /**
-     *
-     * @param iss
-     */
-    @Override
-    public void setScoreStrategy(IScoreStrategy iss) {
-        this.ScoreStrategy = iss;
     }
 
 }

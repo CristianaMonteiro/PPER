@@ -18,24 +18,44 @@ public class IQuestionNumeric implements interfaces.models.IQuestionNumeric {
     private double Correct_anwser;
     private double User_answer;
 
+    /**
+     * Método que retorna a resposta correta
+     *
+     * @return resposta correta
+     */
     @Override
     public double getCorrect_anwser() {
         return this.Correct_anwser;
 
     }
 
+    /**
+     * Método que define a resposta correta
+     *
+     * @param d resposta correta como parametro
+     */
     @Override
     public void setCorrect_anwser(double d) {
         this.Correct_anwser = d;
 
     }
 
+    /**
+     * Método que retorna o utilizador da resposta
+     *
+     * @return utilizador da resposta
+     */
     @Override
     public double getUser_answer() {
         return this.User_answer;
 
     }
 
+    /**
+     * Método que define o utilizador da resposta
+     *
+     * @param d utilizador da resposta como parametro
+     */
     @Override
     public void setUser_answer(double d) {
         this.User_answer = d;
