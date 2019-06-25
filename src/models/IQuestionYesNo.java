@@ -1,38 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
-import interfaces.models.IQuestionYesNo;
-
 /**
+ * <h3>
+ * ESTG - Escola Superior de Tecnologia e Gestão <br>
+ * IPP - Instituto Politécnico de Porto <br>
+ * LEI - Licenciatura em Engenharia Informática <br>
+ * PP - Paradigmas de Programação <br>
+ * </h3>
+ * <p>
+ * <strong>Descrição: </strong><br>
  *
- * @author Cris
+ * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * <p>
  */
-public class IQuestionYesNo implements IQuestionYesNo {
+public class IQuestionYesNo implements interfaces.models.IQuestionYesNo {
+
     private String Correct_answer;
     private String User_answer;
-    
+
+    @Override
     public String getCorrect_answer() {
         return this.Correct_answer;
-        
+
     }
 
+    @Override
     public void setCorrect_answer(String string) {
         this.Correct_answer = string;
-        
+
     }
 
+    @Override
     public String getUser_answer() {
         return this.User_answer;
-        
+
     }
 
+    @Override
     public void setUser_answer(String string) {
         this.User_answer = string;
-        
+
     }
-    
+
 }

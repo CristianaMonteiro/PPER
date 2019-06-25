@@ -1,17 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
+/**
+ * <h3>
+ * ESTG - Escola Superior de Tecnologia e Gestão <br>
+ * IPP - Instituto Politécnico de Porto <br>
+ * LEI - Licenciatura em Engenharia Informática <br>
+ * PP - Paradigmas de Programação <br>
+ * </h3>
+ * <p>
+ * <strong>Descrição: </strong><br>
+ *
+ * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * <p>
+ */
 import interfaces.models.IQuestion;
 
-/**
- *
- * @author Cris
- */
-public class ITestStatistics implements ITestStatistics {
+public class ITestStatistics implements interfaces.controller.ITestStatistics {
+
     private double meanTimePerAnswer;
     private double standardDeviationTimePerAnsewer;
     private double correctAnswerPecentage;
@@ -20,39 +25,46 @@ public class ITestStatistics implements ITestStatistics {
     private int incorrectAnswer;
     private IQuestion[] incorrectAnswers;
     private IQuestion[] correctAnswers;
-    
-    
+
+    @Override
     public double meanTimePerAnswer() {
-        
+
     }
 
-    public double standardDeviationTimePerAnsewer(){
-        return;
-        
+    @Override
+    public double standardDeviationTimePerAnsewer() {
+
     }
 
+    @Override
     public double correctAnswerPecentage() {
-        
+
     }
 
+    @Override
     public double incorrectAnswerPecentage() {
-        
+
     }
 
+    @Override
     public int correctAnswer() {
-        
+
     }
 
+    @Override
     public int incorrectAnswer() {
-        
+
     }
 
+    @Override
     public IQuestion[] incorrectAnswers() {
-        
+
     }
 
+    @Override
     public IQuestion[] correctAnswers() {
-        
+        return null;
+
     }
-    
+
 }
