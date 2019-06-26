@@ -2,6 +2,8 @@
   <library name="Resources">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/Resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/lib/gson-2.8.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

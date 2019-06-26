@@ -8,9 +8,10 @@ package controllers;
  * PP - Paradigmas de Programação <br>
  * </h3>
  * <p>
- * <strong>Descrição: </strong><br>
+ * <strong>Descrição: Trabalho Época de Recurso </strong><br>
  *
- * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * Autor: Cristiana Ferreira Monteiro
+ * Número Mecanográfico: 8150489
  * <p>
  */
 import interfaces.controller.IScoreStrategy;
@@ -76,6 +77,7 @@ public class ITest implements interfaces.controller.ITest {
 
     /**
      * Método que retorna a estratégia da pontuação
+     *
      * @return estratégia da pontuação
      */
     @Override

@@ -8,9 +8,10 @@ package models;
  * PP - Paradigmas de Programação <br>
  * </h3>
  * <p>
- * <strong>Descrição: </strong><br>
+ * <strong>Descrição: Trabalho Época de Recurso </strong><br>
  *
- * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * Autor: Cristiana Ferreira Monteiro
+ * Número Mecanográfico: 8150489
  * <p>
  */
 import interfaces.exceptions.QuestionException;
@@ -37,14 +38,29 @@ public class IQuestion implements interfaces.models.IQuestion {
         this.id = IQuestion.count++;
     }
 
+    /**
+     * Método que retorna o ID
+     *
+     * @return id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Método que retorna a resposta a uma pergunta
+     *
+     * @return resposta
+     */
     public String getAnswer() {
         return answer;
     }
 
+    /**
+     * Método que retorna a avaliação da resposta
+     *
+     * @return verdadeiro ou falso
+     */
     public boolean isEvaluateAnswer() {
         return evaluateAnswer;
     }
@@ -153,7 +169,8 @@ public class IQuestion implements interfaces.models.IQuestion {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(id, getTitle(), getQuestion_description(), getQuestion_metadata(), isDone(), answer, evaluateAnswer, getMark());
+        return Objects.hash(id, getTitle(), getQuestion_description(), getQuestion_metadata(), isDone(), answer,
+                evaluateAnswer, getMark());
     }
 
     /**
