@@ -1,5 +1,8 @@
 package models;
 
+import interfaces.exceptions.QuestionException;
+import interfaces.models.IQuestionMetadata;
+
 /**
  * <h3>
  * ESTG - Escola Superior de Tecnologia e Gestão <br>
@@ -17,6 +20,79 @@ public class IQuestionNumeric implements interfaces.models.IQuestionNumeric {
 
     private double Correct_anwser;
     private double User_answer;
+
+
+    /**
+     * Método que retorna o titulo
+     *
+     * @return titulo
+     */
+    @Override
+    public String getTitle() {
+        return this.getTitle();
+    }
+
+    /**
+     * Método par definir o titulo
+     *
+     * @param s
+     * @throws QuestionException
+     */
+    @Override
+    public void setTitle(String s) throws QuestionException {
+
+
+    }
+
+    @Override
+    public String getQuestion_description() {
+        return null;
+    }
+
+    @Override
+    public void setQuestion_description(String s) throws QuestionException {
+
+    }
+
+    @Override
+    public IQuestionMetadata getQuestion_metadata() {
+        return null;
+    }
+
+    @Override
+    public void setQuestion_metadata(IQuestionMetadata iQuestionMetadata) {
+
+    }
+
+    @Override
+    public boolean isDone() {
+        return false;
+    }
+
+    @Override
+    public void setDone(boolean b) {
+
+    }
+
+    @Override
+    public void answer(String s) {
+
+    }
+
+    @Override
+    public boolean evaluateAnswer() {
+        return false;
+    }
+
+    @Override
+    public float getMark() {
+        return 0;
+    }
+
+    @Override
+    public void setMark(float v) {
+
+    }
 
     /**
      * Método que retorna a resposta correta
