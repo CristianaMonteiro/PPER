@@ -5,32 +5,35 @@
  */
 package Demo;
 
+import controllers.ITest;
+import views.TestWindow;
+
 /**
  *
  * @author Cris
  */
-public class PP_ER {
+public class Demo {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-       System.out.println("Inicio de Teste!");
-        
-        //Carregar o test
-        ITest demoTest = new Test ();
-        demoTest.loadFromJSONFile("data/teste_A.json");
-        
-        //Executar o teste na camada gráfica
-        TestWindow t = new TestWindow ();
-        t.startTest (demoTest);
-        
-        //Obter os resultados do teste
-        System.out.println("Teste efetuado!");
-        System.out.println(demoTest.toString());
-        
-    }
-    
+	/**
+	 * @param args the command line arguments
+	 */
+	public static void main(String[] args) {
+		// TODO code application logic here
+
+		System.out.println("Inicio de Teste!");
+
+		// Carregar o test
+		ITest demoTest = new Test();
+		demoTest.loadFromJSONFile("data/teste_A.json");
+
+		// Executar o teste na camada gráfica
+		TestWindow t = new TestWindow();
+		t.startTest(demoTest);
+
+		// Obter os resultados do teste
+		System.out.println("Teste efetuado!");
+		System.out.println(demoTest.toString());
+
+	}
+
 }
