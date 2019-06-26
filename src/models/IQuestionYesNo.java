@@ -1,5 +1,8 @@
 package models;
 
+import interfaces.exceptions.QuestionException;
+import interfaces.models.IQuestionMetadata;
+
 /**
  * <h3>
  * ESTG - Escola Superior de Tecnologia e Gestão <br>
@@ -13,10 +16,133 @@ package models;
  * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
  * <p>
  */
-public class IQuestionYesNo implements interfaces.models.IQuestionYesNo {
+public class IQuestionYesNo extends IQuestion implements interfaces.models.IQuestionYesNo {
 
     private String Correct_answer;
     private String User_answer;
+
+    /**
+     *
+     */
+    public IQuestionYesNo() {
+        super();
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public String getTitle() {
+        return super.getTitle();
+    }
+
+    /**
+     * @param s
+     * @throws QuestionException
+     */
+    @Override
+    public void setTitle(String s) throws QuestionException {
+        super.setTitle(s);
+
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public String getQuestion_description() {
+        return super.getQuestion_description();
+    }
+
+    /**
+     * @param s
+     * @throws QuestionException
+     */
+    @Override
+    public void setQuestion_description(String s) throws QuestionException {
+        super.setQuestion_description(s);
+
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public IQuestionMetadata getQuestion_metadata() {
+        return super.getQuestion_metadata();
+    }
+
+    /**
+     * @param iQuestionMetadata
+     */
+    @Override
+    public void setQuestion_metadata(IQuestionMetadata iQuestionMetadata) {
+        super.setQuestion_metadata(iQuestionMetadata);
+
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public boolean isDone() {
+        return super.isDone();
+    }
+
+    /**
+     * @param b
+     */
+    @Override
+    public void setDone(boolean b) {
+        super.setDone(b);
+
+    }
+
+    /**
+     * @param s
+     */
+    @Override
+    public void answer(String s) {
+        super.answer(s);
+
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public boolean evaluateAnswer() {
+        return super.evaluateAnswer();
+    }
+
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
+    @Override
+    public float getMark() {
+        return super.getMark();
+    }
+
+    /**
+     * @param v
+     */
+    @Override
+    public void setMark(float v) {
+        super.setMark(v);
+
+    }
 
     /**
      * Método que retorna a resposta correta

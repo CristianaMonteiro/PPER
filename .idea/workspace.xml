@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3fc2b002-64be-4aaf-a802-8a398d5fdfba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/IQuestionNumeric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IQuestionNumeric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IQuestionYesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IQuestionYesNo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/IQuestionNumeric.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+            <state relative-caret-position="3151">
+              <caret line="143" column="47" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#677#678#0" expanded="true" />
@@ -33,20 +32,37 @@
                 <element signature="e#1583#1584#0" expanded="true" />
                 <element signature="e#1781#1782#0" expanded="true" />
                 <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#2038#2039#0" expanded="true" />
-                <element signature="e#2083#2084#0" expanded="true" />
-                <element signature="e#2127#2128#0" expanded="true" />
-                <element signature="e#2165#2166#0" expanded="true" />
+                <element signature="e#2626#2627#0" expanded="true" />
+                <element signature="e#2671#2672#0" expanded="true" />
+                <element signature="e#2715#2716#0" expanded="true" />
+                <element signature="e#2753#2754#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/IQuestionYesNo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="1743">
+              <caret line="149" column="30" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#750#751#0" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1606#1607#0" expanded="true" />
+                <element signature="e#1634#1635#0" expanded="true" />
+                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,10 +78,10 @@
         <option value="$PROJECT_DIR$/src/controllers/IScoreStrategy.java" />
         <option value="$PROJECT_DIR$/src/models/IQuestionMetadata.java" />
         <option value="$PROJECT_DIR$/src/models/IQuestionMultipleChoice.java" />
-        <option value="$PROJECT_DIR$/src/models/IQuestionYesNo.java" />
         <option value="$PROJECT_DIR$/src/models/IQuestion.java" />
         <option value="$PROJECT_DIR$/src/controllers/ITest.java" />
         <option value="$PROJECT_DIR$/src/models/IQuestionNumeric.java" />
+        <option value="$PROJECT_DIR$/src/models/IQuestionYesNo.java" />
       </list>
     </option>
   </component>
@@ -225,15 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561563027606</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Classe IQuestionNumeric pronto">
+      <created>1561564131090</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561564131090</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8803000" />
+    <option name="totallyTimeSpent" value="9532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -273,7 +295,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Mais um passo" />
     <MESSAGE value="Classe IQuestionNumeric" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe IQuestionNumeric" />
+    <MESSAGE value="Classe IQuestionNumeric pronto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe IQuestionNumeric pronto" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -336,36 +359,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/IQuestionYesNo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1799">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="-184">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1641#1642#0" expanded="true" />
-            <element signature="e#2070#2071#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
-            <element signature="e#2404#2405#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
-            <element signature="e#2826#2827#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/IQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="2157">
           <caret line="200" column="7" lean-forward="true" selection-start-line="200" selection-start-column="7" selection-end-line="200" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -377,8 +383,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/IQuestionNumeric.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+        <state relative-caret-position="3151">
+          <caret line="143" column="47" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#677#678#0" expanded="true" />
@@ -389,10 +395,34 @@
             <element signature="e#1583#1584#0" expanded="true" />
             <element signature="e#1781#1782#0" expanded="true" />
             <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2083#2084#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2165#2166#0" expanded="true" />
+            <element signature="e#2626#2627#0" expanded="true" />
+            <element signature="e#2671#2672#0" expanded="true" />
+            <element signature="e#2715#2716#0" expanded="true" />
+            <element signature="e#2753#2754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/IQuestionYesNo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1743">
+          <caret line="149" column="30" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
           </folding>
         </state>
       </provider>
