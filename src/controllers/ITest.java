@@ -58,6 +58,7 @@ public class ITest implements interfaces.controller.ITest {
 	 *
 	 * @return
 	 */
+	// <h3>DUVIDAS</h3> -> how to calculate score
 	@Override
 	public String calculateScore() {
 		return this.Score;
@@ -100,6 +101,7 @@ public class ITest implements interfaces.controller.ITest {
 	 *
 	 * @return
 	 */
+	// <h3>DUVIDAS</h3>
 	@Override
 	public boolean isComplete() {
 		return this.Complete;
@@ -111,6 +113,7 @@ public class ITest implements interfaces.controller.ITest {
 	 * @return
 	 * @throws TestException
 	 */
+	// <h3>DUVIDAS</h3> --> se e para ler como objeto ou nao
 	@Override
 	public boolean loadFromJSONFile(String string) throws TestException {
 
@@ -121,6 +124,7 @@ public class ITest implements interfaces.controller.ITest {
 	 *
 	 * @return numero da perguntas existente no teste
 	 */
+	// <h3>DUVIDAS</h3> -> confirmar
 	@Override
 	public int numberQuestions() {
 		return count;
@@ -191,6 +195,7 @@ public class ITest implements interfaces.controller.ITest {
 	 * @return resultados do teste
 	 * @throws TestException
 	 */
+	// <h3>DUVIDAS</h3>
 	@Override
 	public boolean saveTestResults(String string) throws TestException {
 
@@ -203,7 +208,6 @@ public class ITest implements interfaces.controller.ITest {
 	 */
 	@Override
 	public void setScoreStrategy(IScoreStrategy iss) {
-
 		this.ScoreStrategy = iss;
 	}
 
