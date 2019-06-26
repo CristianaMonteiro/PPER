@@ -24,9 +24,16 @@ import interfaces.models.IQuestion;
 
 public class ITest implements interfaces.controller.ITest {
 
+	/**
+	 * Variável para countar espaços ocupados
+	 */
 	private static int count = 0;
 
+	/**
+	 * Tamanho máximo para instanciar o array
+	 */
 	private static final int MAX_SIZE = 100;
+
 	private boolean Complete;
 	private IQuestion[] IQuestion;
 	private boolean loadFromJSONFile;
@@ -34,8 +41,11 @@ public class ITest implements interfaces.controller.ITest {
 	private boolean Question;
 	private boolean removeQuestion;
 	private boolean saveTestResults;
+
 	private String Score;
+
 	private IScoreStrategy ScoreStrategy;
+
 	private ITestStatistics TestStatistics;
 
 	/**
