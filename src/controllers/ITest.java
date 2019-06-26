@@ -25,7 +25,7 @@ import interfaces.models.IQuestion;
 public class ITest implements interfaces.controller.ITest {
 
 	/**
-	 * Variável para countar espaços ocupados
+	 * Variável para contar espaços ocupados
 	 */
 	private static int count = 0;
 

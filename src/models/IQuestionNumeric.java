@@ -16,7 +16,7 @@ import interfaces.models.IQuestionMetadata;
  * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
  * <p>
  */
-public class IQuestionNumeric implements interfaces.models.IQuestionNumeric {
+public class IQuestionNumeric extends IQuestion implements interfaces.models.IQuestionNumeric {
 
     private double Correct_anwser;
     private double User_answer;
@@ -29,68 +29,123 @@ public class IQuestionNumeric implements interfaces.models.IQuestionNumeric {
      */
     @Override
     public String getTitle() {
-        return this.getTitle();
+        return super.getTitle();
     }
 
     /**
-     * Método par definir o titulo
+     * Método para definir o titulo
      *
-     * @param s
+     * @param s titulo recebido como parametro
      * @throws QuestionException
      */
     @Override
     public void setTitle(String s) throws QuestionException {
-
-
+        super.setTitle(s);
     }
 
+    /**
+     * Metodo que retorna a descrição da pergunta
+     *
+     * @return descrição da pergunta
+     */
     @Override
     public String getQuestion_description() {
-        return null;
+        return super.getQuestion_description();
     }
 
+    /**
+     * Método para definir a descrição da pergunta
+     *
+     * @param s descrição da pergunta recebida como parametro
+     * @throws QuestionException
+     */
     @Override
     public void setQuestion_description(String s) throws QuestionException {
+        super.setQuestion_description(s);
 
     }
 
+    /**
+     * Método que retorna o metadata da pergunta
+     *
+     * @return metadata da pergunta
+     */
     @Override
     public IQuestionMetadata getQuestion_metadata() {
-        return null;
+        return super.getQuestion_metadata();
     }
 
+    /**
+     * Método que define o metadata da pergunta
+     *
+     * @param iQuestionMetadata metadata da pergunta como parametro
+     */
     @Override
     public void setQuestion_metadata(IQuestionMetadata iQuestionMetadata) {
+        super.setQuestion_metadata(iQuestionMetadata);
 
     }
 
+    /**
+     * Metodo que retorna
+     *
+     * @return
+     */
     @Override
     public boolean isDone() {
-        return false;
+        return super.isDone();
     }
 
+    /**
+     * Metodo que define o estado da pergunta
+     *
+     * @param b stado da pergunta para parametro
+     */
     @Override
     public void setDone(boolean b) {
+        super.setDone(b);
 
     }
 
+    /**
+     * Método que define a resposta
+     *
+     * @param s reposta como parametro
+     */
     @Override
     public void answer(String s) {
+        super.answer(s);
 
     }
 
+    /**
+     * Método que retorna a avaliação da pergunta
+     *
+     * @return verdadeiro ou falso
+     */
     @Override
     public boolean evaluateAnswer() {
-        return false;
+        return super.evaluateAnswer();
     }
 
+    /**
+     * Método que retorna o valor da cotação
+     *
+     * @return valor da cotação
+     */
     @Override
     public float getMark() {
-        return 0;
+        return super.getMark();
     }
 
+    /**
+     * Método que define o valor da cotação
+     *
+     * @param v valor da cotação como parametro
+     */
     @Override
     public void setMark(float v) {
+        super.setMark(v);
 
     }
 
