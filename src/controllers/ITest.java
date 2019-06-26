@@ -134,11 +134,23 @@ public class ITest implements interfaces.controller.ITest {
 	 */
 	@Override
 	public boolean removeQuestion(int i) {
-		for (int k = i; k < ITest.count - 1; k++) {
-			this.Question[k] = this.Question[k + 1];
+		// Start for in i position
+		for (int j = i; j < ITest.count - 1; j++) {
+			// Change IQuestion in I position to the next
+			this.IQuestion[j] = this.IQuestion[j + 1];
 		}
 
-		return false;
+		// Put last position in null
+		this.IQuestion[ITest.count - 1] = null;
+
+		if (this.IQuestion[ITest.count - 1] == null) {
+			// Decrement count
+			ITest.count--;
+
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -160,7 +172,6 @@ public class ITest implements interfaces.controller.ITest {
 		}
 
 		// Put last position in null
-
 		this.IQuestion[ITest.count - 1] = null;
 
 		if (this.IQuestion[ITest.count - 1] == null) {
