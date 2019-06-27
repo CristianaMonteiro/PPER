@@ -17,7 +17,7 @@ package controllers;
  * Número Mecanográfico: 8150489
  * <p>
  */
-import interfaces.controller.IScoreStrategy;
+
 import interfaces.controller.ITestStatistics;
 import interfaces.exceptions.TestException;
 import interfaces.models.IQuestion;
@@ -45,7 +45,6 @@ public class ITest implements interfaces.controller.ITest {
 	private String Score;
 
 	private IScoreStrategy ScoreStrategy;
-
 	private ITestStatistics TestStatistics;
 
 
@@ -127,6 +126,45 @@ public class ITest implements interfaces.controller.ITest {
 	// <h3>DUVIDAS</h3> --> se e para ler como objeto ou nao
 	@Override
 	public boolean loadFromJSONFile(String string) throws TestException {
+		JSONParser l = new JSONParser();
+
+		try {
+			JSONArray j = (JSONArray) l.parse(new FileReader("raceResults\\" + "classification" + level + "json"));
+			Classification c = null;
+
+
+			for (Object r : j) {
+				JSONObject p = (JSONObject) r;
+
+
+				JSONObject jo = (JSONObject) p.get("positionDetails");
+				c = new Classification(new Vehicle(10, 5, (String) jo.get("Vehicle"), (int) (long) jo.get("PilotId"), (String)
+						jo.get("PilotName")), this.level, (int) (long) jo.get("TotalLaps"));
+
+
+				c.getVehicle().setName((String) jo.get("Vehicle"));
+
+
+				c.setBestLap((double) jo.get("BestLap"));
+				c.setTotalLaps((int) (long) jo.get("TotalLaps"));
+				c.setTotalTime((double) jo.get("BestTime"));
+
+				classification.addObject(c);
+
+			}
+
+
+		} catch (FileNotFoundException w) {
+			System.out.println("loadResultsFromFile: File not found");
+		} catch (IOException w) {
+			System.out.println("loadResultsFromFile: File don't open");
+		} catch (ParseException w) {
+			System.out.println("loadResultsFromFile:Parse error");
+		}
+
+
+		return this.classification;
+
 
 	}
 
