@@ -15,7 +15,7 @@ package src.controllers;
  */
 import interfaces.models.IQuestion;
 
-public class ITestStatistics implements interfaces.controller.ITestStatistics {
+public class iTestStatistics implements interfaces.controller.ITestStatistics {
 
 	private double meanTimePerAnswer;
 	private double standardDeviationTimePerAnsewer;

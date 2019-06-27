@@ -14,7 +14,7 @@ package models;
  * Número Mecanográfico: 8150489
  * <p>
  */
-public class IQuestionMetadata extends IQuestion implements interfaces.models.IQuestionMetadata {
+public class iQuestionMetadata implements interfaces.models.IQuestionMetadata {
 
     private long Timestamp_start;
     private long Timestamp_finish;

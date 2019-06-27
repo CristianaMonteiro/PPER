@@ -14,9 +14,10 @@ package controllers;
  * Número Mecanográfico: 8150489
  * <p>
  */
-import models.IQuestion;
 
-public class IScoreStrategy implements interfaces.controller.IScoreStrategy {
+import models.iQuestion;
+
+public class iScoreStrategy implements interfaces.controller.IScoreStrategy {
 
     private String CalculateScore;
 
@@ -34,7 +35,7 @@ public class IScoreStrategy implements interfaces.controller.IScoreStrategy {
      * @param iqs
      * @return
      */
-    public String CalculateScore(IQuestion[] iqs) {
+    public String CalculateScore(iQuestion[] iqs) {
         return "teste";
 
     }

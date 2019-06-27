@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Resources">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/Resources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/lib/AbsoluteLayout.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Material para os alunos/Material para os alunos/lib/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Resources/Resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Resources/lib/gson-2.8.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Resources/lib/AbsoluteLayout.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

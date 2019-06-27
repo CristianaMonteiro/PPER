@@ -18,16 +18,18 @@ package controllers;
  * <p>
  */
 
+import interfaces.controller.IScoreStrategy;
 import interfaces.controller.ITestStatistics;
 import interfaces.exceptions.TestException;
 import interfaces.models.IQuestion;
 
-public class ITest implements interfaces.controller.ITest {
+public class iTest implements interfaces.controller.ITest {
 
 	/**
 	 * Variável para contar espaços ocupados
 	 */
 	private static int count = 0;
+
 
 	/**
 	 * Tamanho máximo para instanciar o array
@@ -44,7 +46,7 @@ public class ITest implements interfaces.controller.ITest {
 
 	private String Score;
 
-	private IScoreStrategy ScoreStrategy;
+	private iScoreStrategy ScoreStrategy;
 	private ITestStatistics TestStatistics;
 
 
@@ -92,7 +94,7 @@ public class ITest implements interfaces.controller.ITest {
 	 * @return estratégia da pontuação
 	 */
 	@Override
-	public IScoreStrategy getScoreStrategy() {
+	public iScoreStrategy getScoreStrategy() {
 		return this.ScoreStrategy;
 	}
 
@@ -168,6 +170,11 @@ public class ITest implements interfaces.controller.ITest {
 
 	}
 
+	@Override
+	public void setScoreStrategy(IScoreStrategy iScoreStrategy) {
+
+	}
+
 	/**
 	 * Método que retorna o numero de perguntas
 	 *
@@ -180,6 +187,16 @@ public class ITest implements interfaces.controller.ITest {
 	}
 
 	/**
+	 * Método para definir a estratégia de pontuação
+	 *
+	 * @param iss estratégia de pontuação
+	 */
+	@Override
+	public void setScoreStrategy(iScoreStrategy iss) {
+		this.ScoreStrategy = iss;
+	}
+
+	/**
 	 * Método que remove a pergunta
 	 *
 	 * @param i
@@ -188,17 +205,17 @@ public class ITest implements interfaces.controller.ITest {
 	@Override
 	public boolean removeQuestion(int i) {
 		// Start for in i position
-		for (int j = i; j < ITest.count - 1; j++) {
-			// Change IQuestion in I position to the next
+		for (int j = i; j < iTest.count - 1; j++) {
+			// Change iQuestion in I position to the next
 			this.IQuestion[j] = this.IQuestion[j + 1];
 		}
 
 		// Put last position in null
-		this.IQuestion[ITest.count - 1] = null;
+		this.IQuestion[iTest.count - 1] = null;
 
-		if (this.IQuestion[ITest.count - 1] == null) {
+		if (this.IQuestion[iTest.count - 1] == null) {
 			// Decrement count
-			ITest.count--;
+			iTest.count--;
 
 			return true;
 		} else {
@@ -216,7 +233,7 @@ public class ITest implements interfaces.controller.ITest {
 	 */
 	@Override
 	public boolean removeQuestion(IQuestion iq) {
-		for (int i = 0; i < ITest.count - 1; i++) {
+		for (int i = 0; i < iTest.count - 1; i++) {
 			// Verify if is equals
 			if (this.IQuestion[i].equals(iq)) {
 				// EQUALS = TRUE -> change this positio for the next position
@@ -225,11 +242,11 @@ public class ITest implements interfaces.controller.ITest {
 		}
 
 		// Put last position in null
-		this.IQuestion[ITest.count - 1] = null;
+		this.IQuestion[iTest.count - 1] = null;
 
-		if (this.IQuestion[ITest.count - 1] == null) {
+		if (this.IQuestion[iTest.count - 1] == null) {
 			// Decrement count
-			ITest.count--;
+			iTest.count--;
 
 			return true;
 		} else {
@@ -247,17 +264,7 @@ public class ITest implements interfaces.controller.ITest {
 	// <h3>DUVIDAS</h3>
 	@Override
 	public boolean saveTestResults(String string) throws TestException {
-
-	}
-
-	/**
-	 * Método para definir a estratégia de pontuação
-	 *
-	 * @param iss estratégia de pontuação
-	 */
-	@Override
-	public void setScoreStrategy(IScoreStrategy iss) {
-		this.ScoreStrategy = iss;
+		return true;
 	}
 
 }

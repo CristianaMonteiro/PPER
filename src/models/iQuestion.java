@@ -3,6 +3,9 @@
  */
 package models;
 
+import interfaces.exceptions.QuestionException;
+import interfaces.models.IQuestionMetadata;
+
 import java.util.Objects;
 
 /**
@@ -14,15 +17,14 @@ import java.util.Objects;
  * </h3>
  * <p>
  * <strong>Descrição: Trabalho Época de Recurso </strong><br>
- *
+ * <p>
  * Autor: Cristiana Ferreira Monteiro
  * Número Mecanográfico: 8150489
  * <p>
  */
-import interfaces.exceptions.QuestionException;
-import interfaces.models.IQuestionMetadata;
 
-public class IQuestion implements interfaces.models.IQuestion {
+
+public class iQuestion implements interfaces.models.IQuestion {
 
 	private static int count = 0;
 	private String answer;
@@ -31,14 +33,14 @@ public class IQuestion implements interfaces.models.IQuestion {
 	private int id;
 	private float Mark;
 	private String Question_description;
-	private IQuestionMetadata Question_metadata;
+	private iQuestionMetadata Question_metadata;
 	private String Title;
 
 	/**
 	 * Construtor por defeito que incremente o count e associa esse count ao ID
 	 */
 	{
-		this.id = IQuestion.count++;
+		this.id = iQuestion.count++;
 	}
 
 	/**
@@ -63,10 +65,10 @@ public class IQuestion implements interfaces.models.IQuestion {
 		if (this == o) {
 			return true;
 		}
-		if (!(o instanceof IQuestion)) {
+		if (!(o instanceof iQuestion)) {
 			return false;
 		}
-		IQuestion iQuestion = (IQuestion) o;
+		iQuestion iQuestion = (models.iQuestion) o;
 		return this.id == iQuestion.id && this.isDone() == iQuestion.isDone()
 				&& this.evaluateAnswer == iQuestion.evaluateAnswer
 				&& Float.compare(iQuestion.getMark(), this.getMark()) == 0
@@ -76,13 +78,9 @@ public class IQuestion implements interfaces.models.IQuestion {
 				&& this.answer.equals(iQuestion.answer);
 	}
 
-	/**
-	 * Método
-	 *
-	 * @return
-	 */
-	@Override
-	public boolean evaluateAnswer() {
+
+	public abstract boolean evaluateAnswer() {
+
 
 	}
 
@@ -131,9 +129,14 @@ public class IQuestion implements interfaces.models.IQuestion {
 	 * @return metadata de uma pergunta
 	 */
 	@Override
-	public IQuestionMetadata getQuestion_metadata() {
+	public iQuestionMetadata getQuestion_metadata() {
 		return this.Question_metadata;
 
+	}
+
+	@Override
+	public void setQuestion_metadata(IQuestionMetadata iQuestionMetadata) {
+		this.Question_metadata = iQuestionMetadata;
 	}
 
 	/**
@@ -216,7 +219,7 @@ public class IQuestion implements interfaces.models.IQuestion {
 	 * @param iqm metadata de uma pergunta recebida como parametro
 	 */
 	@Override
-	public void setQuestion_metadata(IQuestionMetadata iqm) {
+	public void setQuestion_metadata(iQuestionMetadata iqm) {
 		this.Question_metadata = iqm;
 
 	}
