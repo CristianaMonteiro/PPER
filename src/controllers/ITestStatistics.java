@@ -26,6 +26,7 @@ public class ITestStatistics implements interfaces.controller.ITestStatistics {
 	private IQuestion[] incorrectAnswers;
 	private IQuestion[] correctAnswers;
 
+
 	@Override
 	public double meanTimePerAnswer() {
 

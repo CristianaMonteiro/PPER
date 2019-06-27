@@ -10,7 +10,8 @@ package controllers;
  * <p>
  * <strong>Descrição: </strong><br>
  *
- * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * Autor: Cristiana Ferreira Monteiro
+ * Número Mecanográfico: 8150489
  * <p>
  */
 import models.IQuestion;
@@ -18,6 +19,15 @@ import models.IQuestion;
 public class IScoreStrategy implements interfaces.controller.IScoreStrategy {
 
     private String CalculateScore;
+
+    /**
+     * @param iQuestions
+     * @return
+     */
+    @Override
+    public String CalculateScore(interfaces.models.IQuestion[] iQuestions) {
+        return null;
+    }
 
     /**
      *

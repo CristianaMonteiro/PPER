@@ -10,10 +10,11 @@ package models;
  * <p>
  * <strong>Descrição: </strong><br>
  *
- * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
+ * Autor: Cristiana Ferreira Monteiro
+ * Número Mecanográfico: 8150489
  * <p>
  */
-public class IQuestionMetadata implements interfaces.models.IQuestionMetadata {
+public class IQuestionMetadata extends IQuestion implements interfaces.models.IQuestionMetadata {
 
     private long Timestamp_start;
     private long Timestamp_finish;

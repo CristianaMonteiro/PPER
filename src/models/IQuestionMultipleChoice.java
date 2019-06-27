@@ -102,8 +102,7 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 	 */
 	@Override
 	public boolean evaluateAnswer() {
-
-		return this.User_answer == this.Correct_answer;
+		return this.User_answer.equals(this.Correct_answer);
 	}
 
 	/**
@@ -117,9 +116,24 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 
 	}
 
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
 	@Override
 	public float getMark() {
-		return this.getMark();
+		return super.getMark();
+	}
+
+	/**
+	 * Metodo que define
+	 *
+	 * @param mark
+	 */
+	@Override
+	public void setMark(float mark) {
+		super.setMark(mark);
 	}
 
 	/**
@@ -129,22 +143,30 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 	 */
 	@Override
 	public String[] getOptions() {
+
 		return this.Options;
 	}
 
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
 	@Override
 	public String getQuestion_description() {
-		return this.getQuestion_description();
+
+		return super.getQuestion_description();
 	}
 
+	/**
+	 * Metodo que define
+	 *
+	 * @param description
+	 * @throws QuestionException
+	 */
 	@Override
-	public IQuestionMetadata getQuestion_metadata() {
-		return this.getQuestion_metadata();
-	}
-
-	@Override
-	public String getTitle() {
-		return this.getTitle();
+	public void setQuestion_description(String description) throws QuestionException {
+		super.setQuestion_description(description);
 	}
 
 	/**
@@ -158,9 +180,14 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 
 	}
 
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
 	@Override
-	public boolean isDone() {
-//		return this.isDone();
+	public IQuestionMetadata getQuestion_metadata() {
+		return super.getQuestion_metadata();
 	}
 
 	/**
@@ -174,15 +201,24 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 
 	}
 
+	/**
+	 * Metodo que define
+	 *
+	 * @param metadata
+	 */
 	@Override
-	public void setDone(boolean status) {
-		this.setDone(status);
-
+	public void setQuestion_metadata(IQuestionMetadata metadata) {
+		super.setQuestion_metadata(metadata);
 	}
 
+	/**
+	 * Metodo que retona
+	 *
+	 * @return
+	 */
 	@Override
-	public void setMark(float mark) {
-		this.setMark(mark);
+	public String getTitle() {
+		return super.getTitle();
 	}
 
 	/**
@@ -195,19 +231,31 @@ public class IQuestionMultipleChoice extends IQuestion implements interfaces.mod
 		this.Options = strings;
 	}
 
-	@Override
-	public void setQuestion_description(String description) throws QuestionException {
-		this.setQuestion_description(description);
-	}
-
-	@Override
-	public void setQuestion_metadata(IQuestionMetadata metadata) {
-		this.setQuestion_metadata(metadata);
-	}
-
+	/**
+	 * Metodo que define
+	 *
+	 * @param title
+	 * @throws QuestionException
+	 */
 	@Override
 	public void setTitle(String title) throws QuestionException {
-		this.setTitle(title);
+		super.setTitle(title);
+	}
+
+	@Override
+	public boolean isDone() {
+		return super.isDone();
+	}
+
+	/**
+	 * Metodo que define
+	 *
+	 * @param status
+	 */
+	@Override
+	public void setDone(boolean status) {
+		super.setDone(status);
+
 	}
 
 	/**
