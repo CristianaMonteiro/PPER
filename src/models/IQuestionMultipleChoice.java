@@ -18,20 +18,92 @@ import interfaces.models.IQuestionMetadata;
  * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
  * <p>
  */
-public class IQuestionMultipleChoice implements interfaces.models.IQuestionMultipleChoice {
+public class IQuestionMultipleChoice extends IQuestion implements interfaces.models.IQuestionMultipleChoice {
 
 	private String Correct_answer;
 	private String[] Options;
 	private String User_answer;
 
+	/**
+	 * Metodo que retorna
+	 *
+	 * @param o é a pergunta
+	 * @return
+	 */
+	@Override
+	public boolean equals(Object o) {
+		return super.equals(o);
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
+	@Override
+	public String getAnswer() {
+		return super.getAnswer();
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
+	@Override
+	public int getId() {
+		return super.getId();
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
+	@Override
+	public boolean isEvaluateAnswer() {
+		return super.isEvaluateAnswer();
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+	/**
+	 * Metodo que retorna
+	 *
+	 * @param answer
+	 */
 	@Override
 	public void answer(String answer) {
 		this.User_answer = answer;
 	}
 
+	/**
+	 * Metodo que retorna
+	 *
+	 * @return
+	 */
 	@Override
 	public boolean evaluateAnswer() {
-		return this.evaluateAnswer();
+
+		return this.User_answer == this.Correct_answer;
 	}
 
 	/**

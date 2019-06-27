@@ -98,6 +98,8 @@ public class IQuestionYesNo extends IQuestion implements interfaces.models.IQues
     }
 
     /**
+     * Metodo que retorna
+     *
      * @param b
      */
     @Override
@@ -107,6 +109,8 @@ public class IQuestionYesNo extends IQuestion implements interfaces.models.IQues
     }
 
     /**
+     * Metodo que retorna
+     *
      * @param s
      */
     @Override
@@ -136,6 +140,8 @@ public class IQuestionYesNo extends IQuestion implements interfaces.models.IQues
     }
 
     /**
+     * Metodo que retorna
+     *
      * @param v
      */
     @Override
