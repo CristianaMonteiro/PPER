@@ -6,6 +6,8 @@ package models;
 import interfaces.exceptions.QuestionException;
 import interfaces.models.IQuestionMetadata;
 
+import java.util.Objects;
+
 /**
  * <h3>
  * ESTG - Escola Superior de Tecnologia e Gestão <br>
@@ -30,14 +32,13 @@ public abstract class Question implements interfaces.models.IQuestion {
     private QuestionMetadata questionMetadata;
     private String title;
 
-    public Question(String answer, boolean done, int id, float mark, String questionDescription, QuestionMetadata questionMetadata, String title) {
+    public Question(String answer, boolean done, float mark, String questionDescription, String title) {
         this.id = Question.count++;
         this.answer = answer;
         this.done = done;
-        this.id = id;
         this.mark = mark;
         this.questionDescription = questionDescription;
-        this.questionMetadata = questionMetadata;
+        this.questionMetadata = new QuestionMetadata();
         this.title = title;
     }
 
@@ -52,29 +53,53 @@ public abstract class Question implements interfaces.models.IQuestion {
 
     }
 
-    /**
-     * Método que verifica se duas perguntas são iguais
-     *
-     * @param o é a pergunta
-     * @return verdadeiro ou falso
-     */
-    /*@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!(o instanceof Question)) {
-			return false;
-		}
-		Question iQuestion = (models.Question) o;
-		return this.id == iQuestion.id && this.isDone() == iQuestion.isDone()
-				&& this.evaluateAnswer == iQuestion.evaluateAnswer
-				&& Float.compare(iQuestion.getMark(), this.getMark()) == 0
-				&& this.getTitle().equals(iQuestion.getTitle())
-				&& this.getQuestion_description().equals(iQuestion.getQuestion_description())
-				&& this.getQuestion_metadata().equals(iQuestion.getQuestion_metadata())
-				&& this.answer.equals(iQuestion.answer);
-	}*/
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Question other = (Question) obj;
+        if (this.done != other.done) {
+            return false;
+        }
+        if (this.id != other.id) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.mark) != Float.floatToIntBits(other.mark)) {
+            return false;
+        }
+        if (!Objects.equals(this.answer, other.answer)) {
+            return false;
+        }
+        if (!Objects.equals(this.questionDescription, other.questionDescription)) {
+            return false;
+        }
+        if (!Objects.equals(this.title, other.title)) {
+            return false;
+        }
+        return Objects.equals(this.questionMetadata, other.questionMetadata);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.answer);
+        hash = 23 * hash + (this.done ? 1 : 0);
+        hash = 23 * hash + this.id;
+        hash = 23 * hash + Float.floatToIntBits(this.mark);
+        hash = 23 * hash + Objects.hashCode(this.questionDescription);
+        hash = 23 * hash + Objects.hashCode(this.questionMetadata);
+        hash = 23 * hash + Objects.hashCode(this.title);
+        return hash;
+    }
+
+    @Override
     public abstract boolean evaluateAnswer();
 
     /**

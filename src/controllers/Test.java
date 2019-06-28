@@ -3,6 +3,23 @@
  */
 package controllers;
 
+import com.google.gson.Gson;
+import interfaces.controller.IScoreStrategy;
+import interfaces.controller.ITestStatistics;
+import interfaces.exceptions.TestException;
+import interfaces.models.IQuestion;
+import jsonclass.TypeQuestion;
+import models.Question;
+import models.QuestionMultipleChoice;
+import models.QuestionNumeric;
+import models.QuestionYesNo;
+import myutil.ContainerOfObjects;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * <h3>
  * ESTG - Escola Superior de Tecnologia e Gestão <br>
@@ -13,258 +30,152 @@ package controllers;
  * <p>
  * <strong>Descrição: Trabalho Época de Recurso </strong><br>
  *
- * Autor: Cristiana Ferreira Monteiro
- * Número Mecanográfico: 8150489
+ * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
  * <p>
  */
-
-import interfaces.controller.IScoreStrategy;
-import interfaces.controller.ITestStatistics;
-import interfaces.exceptions.TestException;
-import interfaces.models.IQuestion;
-
 public class Test implements interfaces.controller.ITest {
 
-	/**
-	 * Variável para contar espaços ocupados
-	 */
-	private static int count = 0;
+    private ContainerOfObjects questions;
 
+    private TestStatistics testStatistics;
+    private ScoreStrategy scoreStrategy;
 
-	/**
-	 * Tamanho máximo para instanciar o array
-	 */
-	private static final int MAX_SIZE = 100;
+    public Test() {
+        this.questions = new ContainerOfObjects();
+    }
 
-	private boolean Complete;
-	private IQuestion[] IQuestion;
-	private boolean loadFromJSONFile;
-	private int numberQuestions;
-	private boolean Question;
-	private boolean removeQuestion;
-	private boolean saveTestResults;
+    @Override
+    public boolean addQuestion(IQuestion question) throws TestException {
+        return questions.addObject(question);
+    }
 
-	private String Score;
+    @Override
+    public IQuestion getQuestion(int i) throws TestException {
+        Question q = (Question) questions.getObjects(i);
+        return q;
+    }
 
-	private ScoreStrategy ScoreStrategy;
-	private ITestStatistics TestStatistics;
+    @Override
+    public boolean removeQuestion(int i) {
+        Question q = (Question) questions.removeObject(i);
+        return q != null;
 
+    }
 
-	/**
-	 * Método que adiciona uma pergunta ao array de perguntas
-	 *
-	 * @param iq pergunta
-	 * @return verdadeiro ou falso
-	 * @throws TestException
-	 */
-	@Override
-	public boolean addQuestion(IQuestion iq) throws TestException {
-		this.IQuestion[count] = iq;
-		count++;
+    @Override
+    public boolean removeQuestion(IQuestion iq) {
+        int pos = questions.findObject(iq);
 
-		// Verifica se as perguntas são iguais
-		return this.IQuestion[count - 1].equals(iq);
-	}
+        if (pos == -1) {
+            return false;
+        } else {
+            Question q = (Question) questions.removeObject(pos);
 
-	/**
-	 *
-	 * @return
-	 */
-	// <h3>DUVIDAS</h3> -> how to calculate score
-	@Override
-	public String calculateScore() {
-		return this.Score;
-	}
+            return q != null;
 
-	/**
-	 * Método que retorna a pergunta na posição i passada po parametro
-	 *
-	 * @param i posição da pergunta no array
-	 * @return pergunta
-	 * @throws TestException
-	 */
-	@Override
-	public IQuestion getQuestion(int i) throws TestException {
-		return this.IQuestion[i];
-	}
+        }
 
-	/**
-	 * Método que retorna a estratégia da pontuação
-	 *
-	 * @return estratégia da pontuação
-	 */
-	@Override
-	public ScoreStrategy getScoreStrategy() {
-		return this.ScoreStrategy;
-	}
+    }
 
-	/**
-	 * Método que retorna a estatistica do teste
-	 *
-	 * @return estatistica do teste
-	 */
-	@Override
-	public ITestStatistics getTestStatistics() {
-		return this.TestStatistics;
+    @Override
+    public int numberQuestions() {
+        return questions.arraySize();
+    }
 
-	}
+    @Override
+    public boolean isComplete() {
+        Object[] questionsObjects = questions.getObjects();
 
-	/**
-	 *
-	 * @return
-	 */
-	// <h3>DUVIDAS</h3>
-	@Override
-	public boolean isComplete() {
-		return this.Complete;
-	}
+        boolean returnValue = true;
 
-	/**
-	 *
-	 * @param string
-	 * @return
-	 * @throws TestException
-	 */
-	// <h3>DUVIDAS</h3> --> se e para ler como objeto ou nao
-	@Override
-	public boolean loadFromJSONFile(String string) throws TestException {
-		JSONParser l = new JSONParser();
+        int i = 0;
 
-		try {
-			JSONArray j = (JSONArray) l.parse(new FileReader("raceResults\\" + "classification" + level + "json"));
-			Classification c = null;
+        while (i < questionsObjects.length && returnValue == true) {
 
+            if (!((Question) questionsObjects[i]).isDone()) {
+                returnValue = false;
+            }
 
-			for (Object r : j) {
-				JSONObject p = (JSONObject) r;
+            i++;
 
+        }
 
-				JSONObject jo = (JSONObject) p.get("positionDetails");
-				c = new Classification(new Vehicle(10, 5, (String) jo.get("Vehicle"), (int) (long) jo.get("PilotId"), (String)
-						jo.get("PilotName")), this.level, (int) (long) jo.get("TotalLaps"));
+        return returnValue;
 
+    }
 
-				c.getVehicle().setName((String) jo.get("Vehicle"));
+    @Override
+    public ITestStatistics getTestStatistics() {
+        TestStatistics testStatistics = new TestStatistics(this);
+        return testStatistics;
+    }
 
+    @Override
+    public boolean loadFromJSONFile(String path) throws TestException {
+        try {
+            Gson gson = new Gson();
+            TypeQuestion[] typeQuestion = gson.fromJson(new FileReader(path), TypeQuestion[].class);
 
-				c.setBestLap((double) jo.get("BestLap"));
-				c.setTotalLaps((int) (long) jo.get("TotalLaps"));
-				c.setTotalTime((double) jo.get("BestTime"));
+            for (int i = 0; i < typeQuestion.length; i++) {
 
-				classification.addObject(c);
+                if (typeQuestion[i].getType().equals("MultipleChoice")) {
+                    QuestionMultipleChoice question = new QuestionMultipleChoice(typeQuestion[i].getQuestion().getCorrectAnswer(), typeQuestion[i].getQuestion().getOptions(), null, false, typeQuestion[i].getQuestion().getMark(), typeQuestion[i].getQuestion().getQuestionDescription(), typeQuestion[i].getQuestion().getTitle());
 
-			}
+                    questions.addObject(question);
 
+                } else if (typeQuestion[i].getType().equals("YesNo")) {
+                    QuestionYesNo question = new QuestionYesNo(typeQuestion[i].getQuestion().getCorrectAnswer(), null, false, typeQuestion[i].getQuestion().getMark(), typeQuestion[i].getQuestion().getQuestionDescription(), typeQuestion[i].getQuestion().getTitle());
 
-		} catch (FileNotFoundException w) {
-			System.out.println("loadResultsFromFile: File not found");
-		} catch (IOException w) {
-			System.out.println("loadResultsFromFile: File don't open");
-		} catch (ParseException w) {
-			System.out.println("loadResultsFromFile:Parse error");
-		}
+                    questions.addObject(question);
 
+                } else if (typeQuestion[i].getType().equals("Numeric")) {
+                    QuestionNumeric question = new QuestionNumeric(Double.valueOf(typeQuestion[i].getQuestion().getCorrectAnswer()), 0, false, typeQuestion[i].getQuestion().getMark(), typeQuestion[i].getQuestion().getQuestionDescription(), typeQuestion[i].getQuestion().getTitle());
 
-		return this.classification;
+                    questions.addObject(question);
+                }
+            }
 
+            return true;
 
-	}
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
 
-	@Override
-	public void setScoreStrategy(IScoreStrategy iScoreStrategy) {
+            return false;
+        }
 
-	}
+    }
 
-	/**
-	 * Método que retorna o numero de perguntas
-	 *
-	 * @return numero da perguntas existente no teste
-	 */
-	// <h3>DUVIDAS</h3> -> confirmar
-	@Override
-	public int numberQuestions() {
-		return count;
-	}
+    @Override
+    public IScoreStrategy getScoreStrategy() {
 
-	/**
-	 * Método para definir a estratégia de pontuação
-	 *
-	 * @param iss estratégia de pontuação
-	 */
-	@Override
-	public void setScoreStrategy(ScoreStrategy iss) {
-		this.ScoreStrategy = iss;
-	}
+        return this.scoreStrategy;
 
-	/**
-	 * Método que remove a pergunta
-	 *
-	 * @param i
-	 * @return remoção
-	 */
-	@Override
-	public boolean removeQuestion(int i) {
-		// Start for in i position
-		for (int j = i; j < Test.count - 1; j++) {
-			// Change iQuestion in I position to the next
-			this.IQuestion[j] = this.IQuestion[j + 1];
-		}
+    }
 
-		// Put last position in null
-		this.IQuestion[Test.count - 1] = null;
+    @Override
+    public void setScoreStrategy(IScoreStrategy iss) {
 
-		if (this.IQuestion[Test.count - 1] == null) {
-			// Decrement count
-			Test.count--;
+        this.scoreStrategy = (ScoreStrategy) iss;
+    }
 
-			return true;
-		} else {
-			return false;
-		}
-	}
+    @Override
+    public String calculateScore() {
 
-	/**
-	 * Método para remover uma pergunta do teste
-	 *
-	 * @param iq pergunta a remover
-	 * @return <CODE>true</CODE> se a pergunta for removida com sucesso
-	 *         <CODE>false</CODE> se ocorrer algum erro ou se a pergunta não for
-	 *         removida
-	 */
-	@Override
-	public boolean removeQuestion(IQuestion iq) {
-		for (int i = 0; i < Test.count - 1; i++) {
-			// Verify if is equals
-			if (this.IQuestion[i].equals(iq)) {
-				// EQUALS = TRUE -> change this positio for the next position
-				this.IQuestion[i] = this.IQuestion[i + 1];
-			}
-		}
+        Question[] q = new Question[this.questions.arraySize()];
 
-		// Put last position in null
-		this.IQuestion[Test.count - 1] = null;
+        for (int i = 0; i < questions.arraySize(); i++) {
+            q[i] = (Question) questions.getObjects(i);
+        }
 
-		if (this.IQuestion[Test.count - 1] == null) {
-			// Decrement count
-			Test.count--;
+        String result = this.scoreStrategy.CalculateScore(q);
 
-			return true;
-		} else {
-			return false;
-		}
-	}
+        return result;
 
-	/**
-	 * Método que guarda os resultados do teste
-	 *
-	 * @param string
-	 * @return resultados do teste
-	 * @throws TestException
-	 */
-	// <h3>DUVIDAS</h3>
-	@Override
-	public boolean saveTestResults(String string) throws TestException {
-		return true;
-	}
+    }
+
+    @Override
+    public boolean saveTestResults() throws TestException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

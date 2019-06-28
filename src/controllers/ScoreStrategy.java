@@ -23,7 +23,33 @@ public class ScoreStrategy implements interfaces.controller.IScoreStrategy {
      */
     @Override
     public String CalculateScore(interfaces.models.IQuestion[] iQuestions) {
-        return null;
+
+        float totalMarks = 0;
+        float correctMarks = 0;
+
+        for (int i = 0; i < iQuestions.length; i++) {
+            float mark = iQuestions[i].getMark();
+            totalMarks += mark;
+
+            if (iQuestions[i].evaluateAnswer()) {
+                correctMarks += mark;
+            }
+
+        }
+
+        //converte para um sistema de 100% (percentagem)
+        double percentagemFinal = correctMarks * 100 / totalMarks;
+
+        if (percentagemFinal < 50) {
+            return "Não Satisfaz";
+        } else if (percentagemFinal < 70) {
+            return "Satisfaz";
+        } else if (percentagemFinal < 90) {
+            return "Satisfaz Bastante";
+        } else {
+            return "Excelente";
+        }
+
     }
 
 }

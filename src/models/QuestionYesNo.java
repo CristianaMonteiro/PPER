@@ -18,8 +18,8 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
     private String correctAnswer;
     private String userAnswer;
 
-    public QuestionYesNo(String correctAnswer, String userAnswer, boolean done, int id, float mark, String questionDescription, QuestionMetadata questionMetadata, String title) {
-        super(correctAnswer, done, id, mark, questionDescription, questionMetadata, title);
+    public QuestionYesNo(String correctAnswer, String userAnswer, boolean done, float mark, String questionDescription, String title) {
+        super(correctAnswer, done, mark, questionDescription, title);
         this.correctAnswer = correctAnswer;
         this.userAnswer = userAnswer;
     }
@@ -70,11 +70,7 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
 
     @Override
     public boolean evaluateAnswer() {
-        if (this.correctAnswer.equals(this.userAnswer)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.correctAnswer.equals(this.userAnswer);
     }
 
 }

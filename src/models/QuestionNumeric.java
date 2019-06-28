@@ -18,8 +18,8 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
     private double correctAnwser;
     private double userAnswer;
 
-    public QuestionNumeric(double correctAnwser, double userAnswer, boolean done, int id, float mark, String questionDescription, QuestionMetadata questionMetadata, String title) {
-        super(String.valueOf(userAnswer), done, id, mark, questionDescription, questionMetadata, title);
+    public QuestionNumeric(double correctAnwser, double userAnswer, boolean done, float mark, String questionDescription, String title) {
+        super(String.valueOf(userAnswer), done, mark, questionDescription, title);
         this.correctAnwser = correctAnwser;
         this.userAnswer = userAnswer;
     }
@@ -70,11 +70,7 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
 
     @Override
     public boolean evaluateAnswer() {
-        if (this.correctAnwser == this.userAnswer) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.correctAnwser == this.userAnswer;
     }
 
 }

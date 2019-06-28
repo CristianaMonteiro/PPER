@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc2b002-64be-4aaf-a802-8a398d5fdfba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Resources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Resources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Demo/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ScoreStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/TestStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TestStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/QuestionMultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionMultipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/QuestionNumeric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionNumeric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/QuestionYesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionYesNo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,17 +25,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1334">
-              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,8 +66,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,13 +104,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Resources/lib/AbsoluteLayout.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -168,6 +166,7 @@
       <workItem from="1561554190379" duration="1748000" />
       <workItem from="1561623375152" duration="6849000" />
       <workItem from="1561630409074" duration="1944000" />
+      <workItem from="1561722120047" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="Mais um passo">
       <created>1561476329071</created>
@@ -229,12 +228,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19729000" />
+    <option name="totallyTimeSpent" value="19947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23827533" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24205749" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -345,7 +344,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Demo/demo.java">
+    <entry file="file://$PROJECT_DIR$/src/Demo/Demo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="29" column="28" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="28" />
@@ -424,7 +423,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
+        <state relative-caret-position="478">
           <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
         </state>
       </provider>

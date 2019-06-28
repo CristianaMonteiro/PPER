@@ -6,6 +6,7 @@
 package Demo;
 
 import controllers.Test;
+import interfaces.exceptions.TestException;
 import views.TestWindow;
 
 /**
@@ -14,25 +15,24 @@ import views.TestWindow;
  */
 public class Demo {
 
-	/**
-	 * @param args the command line arguments
-	 */
-	public static void main(String[] args) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws TestException {
 
-		System.out.println("Inicio de Teste!");
+        System.out.println("Inicio de Teste!");
 
-		// Carregar o test
-		Test demoTest = new Test();
-		demoTest.loadFromJSONFile("data/teste_A.json");
+        // Carregar o test
+        Test demoTest = new Test();
+        demoTest.loadFromJSONFile("Resources\\data\\teste_A.json");
 
-		// Executar o teste na camada gráfica
-		TestWindow t = new TestWindow();
-		t.startTest(demoTest);
+        // Executar o teste na camada gráfica
+        TestWindow t = new TestWindow();
+        t.startTest(demoTest);
 
-		// Obter os resultados do teste
-		System.out.println("Teste efetuado!");
-		System.out.println(demoTest.toString());
-
-	}
+        // Obter os resultados do teste
+        System.out.println("Teste efetuado!");
+        System.out.println(demoTest.toString());
+    }
 
 }

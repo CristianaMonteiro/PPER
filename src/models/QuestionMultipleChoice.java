@@ -21,8 +21,8 @@ public class QuestionMultipleChoice extends Question implements interfaces.model
     private String[] options;
     private String userAnswer;
 
-    public QuestionMultipleChoice(String correctAnswer, String[] options, String userAnswer, boolean done, int id, float mark, String questionDescription, QuestionMetadata questionMetadata, String title) {
-        super(correctAnswer, done, id, mark, questionDescription, questionMetadata, title);
+    public QuestionMultipleChoice(String correctAnswer, String[] options, String userAnswer, boolean done, float mark, String questionDescription, String title) {
+        super(correctAnswer, done, mark, questionDescription, title);
         this.correctAnswer = correctAnswer;
         this.options = options;
         this.userAnswer = userAnswer;
@@ -95,10 +95,6 @@ public class QuestionMultipleChoice extends Question implements interfaces.model
 
     @Override
     public boolean evaluateAnswer() {
-        if (this.correctAnswer.equals(this.userAnswer)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.correctAnswer.equals(this.userAnswer);
     }
 }
