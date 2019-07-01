@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc2b002-64be-4aaf-a802-8a398d5fdfba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Resources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Resources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Demo/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/TestStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TestStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/QuestionMultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionMultipleChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/QuestionNumeric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionNumeric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/QuestionYesNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/QuestionYesNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +15,35 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/Question.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/QuestionMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2503">
+              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,6 +66,7 @@
         <option value="$PROJECT_DIR$/src/controllers/iTest.java" />
         <option value="$PROJECT_DIR$/src/models/iQuestion.java" />
         <option value="$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java" />
+        <option value="$PROJECT_DIR$/src/controllers/Test.java" />
       </list>
     </option>
   </component>
@@ -66,6 +85,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,14 +119,18 @@
             </path>
             <path>
               <item name="PP_ER" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PP_ER" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myutil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PP_ER" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,6 +192,7 @@
       <workItem from="1561623375152" duration="6849000" />
       <workItem from="1561630409074" duration="1944000" />
       <workItem from="1561722120047" duration="218000" />
+      <workItem from="1561757284406" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="Mais um passo">
       <created>1561476329071</created>
@@ -224,16 +250,23 @@
       <option name="project" value="LOCAL" />
       <updated>1561632538972</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Falta implementar dois métodos e uma parte de ficheiros.">
+      <created>1561757472056</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561757472056</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19947000" />
+    <option name="totallyTimeSpent" value="20235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24205749" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24583964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -277,7 +310,8 @@
     <MESSAGE value="Métodos todos implementados em todas as classes" />
     <MESSAGE value="Ficheiros mal" />
     <MESSAGE value="Erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="Erros" />
+    <MESSAGE value="Falta implementar dois métodos e uma parte de ficheiros." />
+    <option name="LAST_COMMIT_MESSAGE" value="Falta implementar dois métodos e uma parte de ficheiros." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -326,24 +360,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/iTestStatistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/iScoreStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/iTestStatistics.java" />
+    <entry file="file://$PROJECT_DIR$/src/controllers/iScoreStrategy.java" />
     <entry file="file://$PROJECT_DIR$/src/Demo/Demo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -351,16 +369,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/iTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/iTest.java" />
     <entry file="jar://$PROJECT_DIR$/../Material para os alunos/Material para os alunos/Resources.jar!/interfaces/controller/IScoreStrategy.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -368,63 +377,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/iQuestionMetadata.java">
+    <entry file="file://$PROJECT_DIR$/src/models/iQuestionMetadata.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/iQuestionNumeric.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/iQuestionYesNo.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/iQuestion.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="23">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/iQuestionNumeric.java">
+    <entry file="file://$PROJECT_DIR$/src/models/QuestionMetadata.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="182">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/iQuestionYesNo.java">
+    <entry file="file://$PROJECT_DIR$/src/controllers/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/iQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2072#2073#0" expanded="true" />
-            <element signature="e#2097#2098#0" expanded="true" />
-            <element signature="e#2177#2178#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2321#2322#0" expanded="true" />
-            <element signature="e#2344#2345#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
-            <element signature="e#2888#2889#0" expanded="true" />
-            <element signature="e#2844#2845#0" expanded="true" />
-            <element signature="e#2868#2869#0" expanded="true" />
-            <element signature="e#3477#3478#0" expanded="true" />
-            <element signature="e#3510#3511#0" expanded="true" />
-            <element signature="e#3853#3854#0" expanded="true" />
-            <element signature="e#3873#3874#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/iQuestionMultipleChoice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+        <state relative-caret-position="-2503">
+          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
         </state>
       </provider>
     </entry>
