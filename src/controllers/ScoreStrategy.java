@@ -34,7 +34,6 @@ public class ScoreStrategy implements interfaces.controller.IScoreStrategy {
             if (iQuestions[i].evaluateAnswer()) {
                 correctMarks += mark;
             }
-
         }
 
         //converte para um sistema de 100% (percentagem)

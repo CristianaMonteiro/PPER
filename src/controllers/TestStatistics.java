@@ -13,13 +13,11 @@ package controllers;
  * Autor: Cristiana Ferreira Monteiro Número Mecanográfico: 8150489
  * <p>
  */
-
 import interfaces.exceptions.TestException;
 import interfaces.models.IQuestion;
-import models.Question;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.Question;
 
 public class TestStatistics implements interfaces.controller.ITestStatistics {
 
@@ -33,10 +31,18 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
     private IQuestion[] correctAnswers;
     private Test test;
 
+    /**
+     *
+     * @param test
+     */
     public TestStatistics(Test test) {
         this.test = test;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double meanTimePerAnswer() {
 
@@ -51,7 +57,6 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
                 long timeAnswer = finish - start;
 
                 totalTime += timeAnswer;
-
             }
 
             mean = totalTime / test.numberQuestions();
@@ -62,21 +67,66 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
         return mean;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double standardDeviationTimePerAnsewer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        double desviopadrao = 0;
+
+        try {
+            double mean = meanTimePerAnswer();
+            int totalAnswers = test.numberQuestions();
+
+            double numerador = 0;
+
+            for (int i = 0; i < test.numberQuestions(); i++) {
+
+                Question q = (Question) test.getQuestion(i);
+                long start = q.getQuestion_metadata().getTimestamp_start();
+                long finish = q.getQuestion_metadata().getTimestamp_finish();
+                long timeAnswer = finish - start;
+
+                numerador += Math.pow(timeAnswer - mean, 2);
+
+            }
+
+            double fracao = numerador / totalAnswers;
+
+            desviopadrao = Math.sqrt(fracao);
+
+        } catch (TestException ex) {
+            Logger.getLogger(TestStatistics.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return desviopadrao;
+
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double correctAnswerPecentage() {
         return (double) correctAnswer() / (double) test.numberQuestions() * 100;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double incorrectAnswerPecentage() {
         return (double) incorrectAnswer() / (double) test.numberQuestions() * 100;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int correctAnswer() {
 
@@ -91,7 +141,6 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
                 if (correct) {
                     totalCorrect++;
                 }
-
             }
 
         } catch (TestException ex) {
@@ -101,6 +150,10 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
         return totalCorrect;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int incorrectAnswer() {
         int totalIncorrect = 0;
@@ -114,7 +167,6 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
                 if (incorrect) {
                     totalIncorrect++;
                 }
-
             }
 
         } catch (TestException ex) {
@@ -124,6 +176,10 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
         return totalIncorrect;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public IQuestion[] incorrectAnswers() {
         Question[] incorrectQuestions = new Question[incorrectAnswer()];
@@ -149,6 +205,10 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
         return incorrectQuestions;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public IQuestion[] correctAnswers() {
 
@@ -173,6 +233,11 @@ public class TestStatistics implements interfaces.controller.ITestStatistics {
         }
 
         return correctQuestions;
+    }
+
+    @Override
+    public String toString() {
+        return "{\"TestStatistics\":{" + "\"meanTimePerAnswer\":" + meanTimePerAnswer() + ", \"standardDeviationTimePerAnsewer\":" + standardDeviationTimePerAnsewer() + ", \"correctAnswerPecentage\":" + correctAnswerPecentage() + ", \"incorrectAnswerPecentage\":" + incorrectAnswerPecentage() + ", \"correctAnswer\":" + correctAnswer() + ", \"incorrectAnswer\":" + incorrectAnswer() + "}}";
     }
 
 }

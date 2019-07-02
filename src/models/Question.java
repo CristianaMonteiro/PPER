@@ -1,11 +1,7 @@
-/*
- *
- */
 package models;
 
 import interfaces.exceptions.QuestionException;
 import interfaces.models.IQuestionMetadata;
-
 import java.util.Objects;
 
 /**
@@ -43,16 +39,23 @@ public abstract class Question implements interfaces.models.IQuestion {
     }
 
     /**
-     * Método para definir a resposta para a pergunta
+     * Define a resposta da pergunta e define a pergunta como respondida
      *
-     * @param userAnswer resposta da pergunta recebido como parametro
+     * @param userAnswer a resposta de uma pergunta
      */
     @Override
     public void answer(String userAnswer) {
         this.answer = userAnswer;
-
+        this.setDone(true);
+        questionMetadata.setTimestamp_finish(System.currentTimeMillis());
     }
 
+    /**
+     * Compara duas intancias de peguntas
+     *
+     * @param obj a pergunta que vai ser comparada com esta
+     * @return true se forem iguais, false se forem diferentes
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -86,6 +89,11 @@ public abstract class Question implements interfaces.models.IQuestion {
         return Objects.equals(this.questionMetadata, other.questionMetadata);
     }
 
+    /**
+     * Método que gera um código único com base nas propriedades da pergunta
+     *
+     * @return o código
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -99,13 +107,19 @@ public abstract class Question implements interfaces.models.IQuestion {
         return hash;
     }
 
+    /**
+     * Avalia a resposta de uma pergunta
+     *
+     *
+     * @return true se a resposta está correta ou false caso contrário
+     */
     @Override
     public abstract boolean evaluateAnswer();
 
     /**
-     * Método que retorna a resposta a uma pergunta
+     * Método
      *
-     * @return resposta
+     * @return
      */
     public String getAnswer() {
         return this.answer;
@@ -114,7 +128,7 @@ public abstract class Question implements interfaces.models.IQuestion {
     /**
      * Método que retorna o ID
      *
-     * @return id
+     * @return
      */
     public int getId() {
         return this.id;
@@ -131,36 +145,40 @@ public abstract class Question implements interfaces.models.IQuestion {
     }
 
     /**
-     * Método para retornar a descrição da pergunta
+     * Método obtém a descrição de uma pergunta
      *
-     * @return descrição da pergunta
+     * @return descrição de uma pergunta
      */
     @Override
     public String getQuestion_description() {
         return this.questionDescription;
-
     }
 
     /**
-     * Método que retorna o metadata de uma pergunta
+     * Método que obtém um objeto que implementa metadados de uma pergunta
      *
-     * @return metadata de uma pergunta
+     * @return um objeto que implementa metadados de uma pergunta
      */
     @Override
     public QuestionMetadata getQuestion_metadata() {
         return this.questionMetadata;
-
     }
 
+    /**
+     * Método que define um objeto que implementa metadados de uma pergunta
+     *
+     * @param iQuestionMetadata um objeto que implementa metadados de uma
+     * pergunta
+     */
     @Override
     public void setQuestion_metadata(IQuestionMetadata iQuestionMetadata) {
         this.questionMetadata = (QuestionMetadata) iQuestionMetadata;
     }
 
     /**
-     * Método para retornar o titulo
+     * Método que obtém o título de uma pergunta
      *
-     * @return titulo
+     * @return o título de uma pergunta
      */
     @Override
     public String getTitle() {
@@ -168,41 +186,29 @@ public abstract class Question implements interfaces.models.IQuestion {
     }
 
     /**
-     * Método que associa um código único a cada campo
+     * Método que verifica se a pergunta é respondida
      *
-     * @return código
-     */
-    /*@Override
-	public int hashCode() {
-		return Objects.hash(this.id, this.getTitle(), this.getQuestion_description(), this.getQuestion_metadata(),
-				this.isDone(), this.answer, this.evaluateAnswer, this.getMark());
-	}*/
-    /**
-     * Método que retorna o estado da pergunta
-     *
-     * @return estado da perdunta (verdadeiro ou falso)
+     * @return true se o pergunta for respondida false caso contrário
      */
     @Override
     public boolean isDone() {
         return this.done;
-
     }
 
     /**
-     * Método para definir o estado da pergunta
+     * Método que define se a pergunta é respondida
      *
-     * @param done estado da pergunta recebido como parametro
+     * @param done booleano se a pergunta for respondida
      */
     @Override
     public void setDone(boolean done) {
         this.done = done;
-
     }
 
     /**
-     * Método para definir o valor da cotação
+     * Método para
      *
-     * @param f valor da cotação recebido como parametro
+     * @param mark
      */
     @Override
     public void setMark(float mark) {
@@ -210,32 +216,33 @@ public abstract class Question implements interfaces.models.IQuestion {
     }
 
     /**
-     * Método para definir descrição da pergunta
+     * Método que define a descrição de uma pergunta
      *
-     * @param questionDescription descirção da pergunta recebido como parametro
-     * @throws QuestionException
+     * @param questionDescription a descrição de uma pergunta
+     * @throws QuestionException se a descrição é nula
      */
     @Override
     public void setQuestion_description(String questionDescription) throws QuestionException {
         this.questionDescription = questionDescription;
-
     }
 
     /**
-     * Método para definir titulo
+     * Método que define o título de uma pergunta
      *
-     * @param title titulo recebido por parâmetro
-     * @throws QuestionException
+     * @param title o título de uma pergunta
+     * @throws QuestionException se título é nulo
      */
     @Override
     public void setTitle(String title) throws QuestionException {
         this.title = title;
-
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Question{" + "answer=" + answer + ", done=" + done + ", id=" + id + ", mark=" + mark + ", questionDescription=" + questionDescription + ", questionMetadata=" + questionMetadata + ", title=" + title + '}';
     }
-
 }

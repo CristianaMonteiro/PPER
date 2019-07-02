@@ -32,7 +32,6 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
     @Override
     public double getCorrect_anwser() {
         return this.correctAnwser;
-
     }
 
     /**
@@ -41,9 +40,9 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
      * @param correctAnwser resposta correta como parametro
      */
     @Override
-    public void setCorrect_anwser(double correctAnwser) {
-        this.correctAnwser = correctAnwser;
-
+    public void setCorrect_anwser(double correctAnswer) {
+        this.correctAnwser = correctAnswer;
+        super.answer(String.valueOf(correctAnswer));
     }
 
     /**
@@ -53,8 +52,7 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
      */
     @Override
     public double getUser_answer() {
-        return this.userAnswer;
-
+        return Double.valueOf(super.getAnswer());
     }
 
     /**
@@ -65,12 +63,16 @@ public class QuestionNumeric extends Question implements interfaces.models.IQues
     @Override
     public void setUser_answer(double userAnswer) {
         this.userAnswer = userAnswer;
-
+        super.answer(String.valueOf(userAnswer));
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean evaluateAnswer() {
-        return this.correctAnwser == this.userAnswer;
+        return this.correctAnwser == Double.valueOf(super.getAnswer());
     }
 
 }

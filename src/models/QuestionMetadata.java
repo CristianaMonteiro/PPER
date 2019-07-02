@@ -19,9 +19,9 @@ public class QuestionMetadata implements interfaces.models.IQuestionMetadata {
     private long timestampFinish;
 
     /**
-     * Método para retornar a data e hora de inicio da resposta
+     * Método que obtém um timestamp marcando o início da resposta da pergunta
      *
-     * @return data e hora de inicio da resposta
+     * @return um timestamp marcando o início da resposta da pergunta
      */
     @Override
     public long getTimestamp_start() {
@@ -30,9 +30,10 @@ public class QuestionMetadata implements interfaces.models.IQuestionMetadata {
     }
 
     /**
-     * Método para definir a data e hora de inicio da resposta
+     * Método que define o início da resposta da pergunta
      *
-     * @param timestampStart data e hora de inicio da resposta como parametro
+     * @param timestampStart um timestamp marcando o início da resposta da
+     * pergunta
      */
     @Override
     public void setTimestamp_start(long timestampStart) {
@@ -41,9 +42,9 @@ public class QuestionMetadata implements interfaces.models.IQuestionMetadata {
     }
 
     /**
-     * Método para retornar data e hora de fim da resposta
+     * Método que obtém um timestamp marcando no final da resposta da pergunta
      *
-     * @return data e hora de fim da resposta
+     * @return um timestamp marcando o final da resposta da pergunta
      */
     @Override
     public long getTimestamp_finish() {
@@ -52,9 +53,10 @@ public class QuestionMetadata implements interfaces.models.IQuestionMetadata {
     }
 
     /**
-     * Método para definir a data e hora de fim da resposta
+     * Método que define o término da resposta da pergunta
      *
-     * @param timestampFinish data e hora de fim da resposta como parametro
+     * @param timestampFinish um timestamp marcando o final da resposta da
+     * pergunta
      */
     @Override
     public void setTimestamp_finish(long timestampFinish) {

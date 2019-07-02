@@ -1,0 +1,6 @@
+[{"TestStatistics":{"meanTimePerAnswer":1291.0, "standardDeviationTimePerAnsewer":652.801079962342, "correctAnswerPecentage":75.0, "incorrectAnswerPecentage":25.0, "correctAnswer":3, "incorrectAnswer":1}}
+,{"TestStatistics":{"meanTimePerAnswer":751.0, "standardDeviationTimePerAnsewer":365.9979508139356, "correctAnswerPecentage":25.0, "incorrectAnswerPecentage":75.0, "correctAnswer":1, "incorrectAnswer":3}}
+,{"TestStatistics":{"meanTimePerAnswer":1882.0, "standardDeviationTimePerAnsewer":343.197465025603, "correctAnswerPecentage":75.0, "incorrectAnswerPecentage":25.0, "correctAnswer":3, "incorrectAnswer":1}}
+,{"TestStatistics":{"meanTimePerAnswer":1318.0, "standardDeviationTimePerAnsewer":885.0097457090515, "correctAnswerPecentage":100.0, "incorrectAnswerPecentage":0.0, "correctAnswer":4, "incorrectAnswer":0}}
+,{"TestStatistics":{"meanTimePerAnswer":1422.0, "standardDeviationTimePerAnsewer":362.5003448274222, "correctAnswerPecentage":100.0, "incorrectAnswerPecentage":0.0, "correctAnswer":2, "incorrectAnswer":0}}
+]

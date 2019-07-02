@@ -32,7 +32,6 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
     @Override
     public String getCorrect_answer() {
         return this.correctAnswer;
-
     }
 
     /**
@@ -43,7 +42,7 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
     @Override
     public void setCorrect_answer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
-
+        super.answer(correctAnswer);
     }
 
     /**
@@ -53,8 +52,7 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
      */
     @Override
     public String getUser_answer() {
-        return this.userAnswer;
-
+        return super.getAnswer();
     }
 
     /**
@@ -65,12 +63,15 @@ public class QuestionYesNo extends Question implements interfaces.models.IQuesti
     @Override
     public void setUser_answer(String userAnswer) {
         this.userAnswer = userAnswer;
-
+        super.answer(userAnswer);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean evaluateAnswer() {
-        return this.correctAnswer.equals(this.userAnswer);
+        return this.correctAnswer.toUpperCase().equals(super.getAnswer().toUpperCase());
     }
-
 }
